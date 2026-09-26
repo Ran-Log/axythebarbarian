@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bi764jwavswga"]
+
+[ext_resource type="Script" uid="uid://cwgomxoyjnw0e" path="res://scripts/DrunkSkeleton.cs" id="1_qovtv"]
+[ext_resource type="PackedScene" uid="uid://6k6i76foanah" path="res://scenes/projectiles/Arrow.tscn" id="2_576jr"]
+[ext_resource type="Texture2D" uid="uid://chx1vwq8iclgb" path="res://assets/sprites/0e4352af80cf47a9adcd6cc08ce80ab1~tplv-jj85edgx6n-image-medium.jpeg" id="3_x0npu"]
+
+[node name="DrunkSkeleton" type="Node2D" unique_id=585798889]
+script = ExtResource("1_qovtv")
+ArrowScene = ExtResource("2_576jr")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=822950884]
+color = Color(0.8936459, 0.8821313, 0.89470637, 1)
+texture = ExtResource("3_x0npu")
+texture_offset = Vector2(25, 22)
+texture_scale = Vector2(12, 12)
+polygon = PackedVector2Array(-20, -20, -20, 20, 20, 20, 20, -20)

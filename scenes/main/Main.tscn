@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dxogfbc3hfy7q"]
+
+[ext_resource type="PackedScene" uid="uid://tdb0edspfbo4" path="res://scenes/player/Player.tscn" id="2_q24mn"]
+[ext_resource type="PackedScene" uid="uid://m3r5erlldjd4" path="res://scenes/enemies/BlindGazer.tscn" id="3_gyg6b"]
+[ext_resource type="PackedScene" uid="uid://bi764jwavswga" path="res://scenes/enemies/DrunkSkeleton.tscn" id="3_q24mn"]
+
+[node name="Main" type="Node2D" unique_id=421943200]
+
+[node name="BlindGazer" parent="." unique_id=1467120104 instance=ExtResource("3_gyg6b")]
+position = Vector2(519, 260)
+MinY = 200.0
+MaxY = 300.0
+
+[node name="Player" parent="." unique_id=506620727 instance=ExtResource("2_q24mn")]
+position = Vector2(215, 208)
+
+[node name="DrunkSkeleton" parent="." unique_id=585798889 instance=ExtResource("3_q24mn")]
+position = Vector2(843, 335)
+ShootInterval = 0.5
