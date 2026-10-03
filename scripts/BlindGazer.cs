@@ -1,17 +1,22 @@
 using Godot;
 
-public partial class BlindGazer : Node2D
+public partial class BlindGazer : CharacterBody2D
 {
 	[Export]
 	public float MoveSpeed = 150.0f;
 
 	[Export]
-	public float MinY = 150.0f;
+	public float MinY = 500.0f;
 
 	[Export]
-	public float MaxY = 450.0f;
+	public float MaxY = 800.0f;
+
+	[Export]
+	public float BounceCooldown = 0.15f;
 
 	private bool movingDown = true;
+
+	private float bounceTimer = 0.0f;
 
 	public override void _Process(double delta)
 	{
@@ -20,27 +25,50 @@ public partial class BlindGazer : Node2D
 
 	private void UpdateState(double delta)
 	{
-		float movement = MoveSpeed * (float)delta;
+		UpdateBounceTimer(delta);
+		CheckLimits();
+		UpdateMovement();
+	}
 
+	private void UpdateMovement()
+	{
 		if (movingDown)
-		{
-			Position += new Vector2(0, movement);
-
-			if (Position.Y >= MaxY)
-			{
-				Position = new Vector2(Position.X, MaxY);
-				movingDown = false;
-			}
-		}
+			Velocity = new Vector2(0, MoveSpeed);
 		else
-		{
-			Position -= new Vector2(0, movement);
+			Velocity = new Vector2(0, -MoveSpeed);
 
-			if (Position.Y <= MinY)
-			{
-				Position = new Vector2(Position.X, MinY);
-				movingDown = true;
-			}
+		MoveAndSlide();
+
+		CheckCollisions();
+	}
+
+	private void CheckCollisions()
+	{
+		if (GetSlideCollisionCount() > 0 &&
+			bounceTimer <= 0)
+		{
+			movingDown = !movingDown;
+			bounceTimer = BounceCooldown;
+		}
+	}
+
+	private void CheckLimits()
+	{
+		if (Position.Y >= MaxY)
+		{
+			movingDown = false;
+		}
+		else if (Position.Y <= MinY)
+		{
+			movingDown = true;
+		}
+	}
+
+	private void UpdateBounceTimer(double delta)
+	{
+		if (bounceTimer > 0)
+		{
+			bounceTimer -= (float)delta;
 		}
 	}
 }

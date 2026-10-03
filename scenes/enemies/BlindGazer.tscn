@@ -3,7 +3,10 @@
 [ext_resource type="Script" uid="uid://cansjl4mjrhvq" path="res://scripts/BlindGazer.cs" id="1_ikkue"]
 [ext_resource type="Texture2D" uid="uid://dbw2d55jlpqcu" path="res://assets/sprites/3abff09a8f3c4098b0b461ee0b88ccb9~tplv-jj85edgx6n-image-medium.jpeg" id="2_cydah"]
 
-[node name="BlindGazer" type="Node2D" unique_id=1467120104]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cydah"]
+size = Vector2(40, 40)
+
+[node name="BlindGazer" type="CharacterBody2D" unique_id=245942272]
 script = ExtResource("1_ikkue")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=384267921]
@@ -12,3 +15,6 @@ texture = ExtResource("2_cydah")
 texture_offset = Vector2(20, 20)
 texture_scale = Vector2(12, 12)
 polygon = PackedVector2Array(-20, -20, -20, 20, 20, 20, 20, -20)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1726199564]
+shape = SubResource("RectangleShape2D_cydah")

@@ -3,17 +3,70 @@
 [ext_resource type="PackedScene" uid="uid://tdb0edspfbo4" path="res://scenes/player/Player.tscn" id="2_q24mn"]
 [ext_resource type="PackedScene" uid="uid://m3r5erlldjd4" path="res://scenes/enemies/BlindGazer.tscn" id="3_gyg6b"]
 [ext_resource type="PackedScene" uid="uid://bi764jwavswga" path="res://scenes/enemies/DrunkSkeleton.tscn" id="3_q24mn"]
+[ext_resource type="AudioStream" uid="uid://bhqo7q8wdamng" path="res://assets/sounds/Left 4 Dead Soundtrack- Witch.mp3" id="4_gyg6b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kedfu"]
+size = Vector2(1400, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g7i20"]
+size = Vector2(80, 1000)
 
 [node name="Main" type="Node2D" unique_id=421943200]
 
+[node name="Walls" type="Node2D" parent="." unique_id=1301820747]
+
+[node name="WallTop" type="StaticBody2D" parent="Walls" unique_id=333481500]
+
+[node name="Polygon2D" type="Polygon2D" parent="Walls/WallTop" unique_id=568556638]
+position = Vector2(607, 47)
+polygon = PackedVector2Array(-700, -40, -700, 40, 700, 40, 700, -40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallTop" unique_id=1855129120]
+position = Vector2(607, 47)
+shape = SubResource("RectangleShape2D_kedfu")
+
+[node name="WallBottom" type="StaticBody2D" parent="Walls" unique_id=1093478172]
+position = Vector2(-19, 558)
+
+[node name="Polygon2D" type="Polygon2D" parent="Walls/WallBottom" unique_id=923722153]
+position = Vector2(607, 47)
+polygon = PackedVector2Array(-700, -40, -700, 40, 700, 40, 700, -40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallBottom" unique_id=1883080795]
+position = Vector2(607, 47)
+shape = SubResource("RectangleShape2D_kedfu")
+
+[node name="WallLeft" type="StaticBody2D" parent="Walls" unique_id=1713548657]
+position = Vector2(43, 275)
+
+[node name="Polygon2D" type="Polygon2D" parent="Walls/WallLeft" unique_id=1858324441]
+polygon = PackedVector2Array(-40, -500, -40, 500, 40, 500, 40, -500)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallLeft" unique_id=515202675]
+shape = SubResource("RectangleShape2D_g7i20")
+
+[node name="WallRight" type="StaticBody2D" parent="Walls" unique_id=1833785302]
+position = Vector2(1106, 298)
+
+[node name="Polygon2D" type="Polygon2D" parent="Walls/WallRight" unique_id=559016905]
+polygon = PackedVector2Array(-40, -500, -40, 500, 40, 500, 40, -500)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallRight" unique_id=1461919427]
+shape = SubResource("RectangleShape2D_g7i20")
+
 [node name="BlindGazer" parent="." unique_id=1467120104 instance=ExtResource("3_gyg6b")]
-position = Vector2(519, 260)
+position = Vector2(514, 122)
+MoveSpeed = 200.0
 MinY = 200.0
-MaxY = 300.0
 
 [node name="Player" parent="." unique_id=506620727 instance=ExtResource("2_q24mn")]
 position = Vector2(215, 208)
+CollisionSoundCooldown = 0.35
 
 [node name="DrunkSkeleton" parent="." unique_id=585798889 instance=ExtResource("3_q24mn")]
 position = Vector2(843, 335)
-ShootInterval = 0.5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1521612058]
+stream = ExtResource("4_gyg6b")
+volume_db = -12.454
+autoplay = true
