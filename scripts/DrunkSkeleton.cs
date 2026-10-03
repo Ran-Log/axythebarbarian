@@ -22,6 +22,11 @@ public partial class DrunkSkeleton : Node2D
 
 	private void UpdateState(double delta)
 	{
+		UpdateShootTimer(delta);
+	}
+
+	private void UpdateShootTimer(double delta)
+	{
 		shootTimer += (float)delta;
 
 		if (shootTimer >= ShootInterval)

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d27hih0knqf0j"
+path="res://.godot/imported/New Super Mario Bros. Wii - Dry Bones Sound Effect.mp3-4fea205eab0a0c9332bb20d84ccde34f.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/New Super Mario Bros. Wii - Dry Bones Sound Effect.mp3"
+dest_files=["res://.godot/imported/New Super Mario Bros. Wii - Dry Bones Sound Effect.mp3-4fea205eab0a0c9332bb20d84ccde34f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

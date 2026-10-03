@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://mu2lvq1w2ruw"
+path="res://.godot/imported/Elusive (Jumpscare) [Lomando.Com].mp3-faf03ece3349675282b49700b92a5240.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Elusive (Jumpscare) [Lomando.Com].mp3"
+dest_files=["res://.godot/imported/Elusive (Jumpscare) [Lomando.Com].mp3-faf03ece3349675282b49700b92a5240.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

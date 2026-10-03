@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://tdb0edspfbo4"]
 
 [ext_resource type="Script" uid="uid://ctpo45bpkb2lf" path="res://scripts/Player.cs" id="1_8afob"]
+[ext_resource type="AudioStream" uid="uid://d27hih0knqf0j" path="res://assets/sounds/New Super Mario Bros. Wii - Dry Bones Sound Effect.mp3" id="2_gfjak"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wr5hl"]
 load_path = "res://.godot/imported/Captura de pantalla 2026-02-08 231845.png-53996d653f994aca7488f90eb3eceae4.ctex"
 
-[node name="Player" type="Node2D" unique_id=506620727]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kedfu"]
+size = Vector2(40, 40)
+
+[node name="Player" type="CharacterBody2D" unique_id=1863031034]
 script = ExtResource("1_8afob")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=2095660972]
@@ -14,3 +18,9 @@ texture = SubResource("CompressedTexture2D_wr5hl")
 texture_offset = Vector2(20, 20)
 texture_scale = Vector2(15, 15)
 polygon = PackedVector2Array(-20, -20, -20, 20, 20, 20, 20, -20)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1815632348]
+shape = SubResource("RectangleShape2D_kedfu")
+
+[node name="CollisionSound" type="AudioStreamPlayer2D" parent="." unique_id=684439022]
+stream = ExtResource("2_gfjak")
