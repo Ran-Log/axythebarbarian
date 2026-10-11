@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://csqmnx8pqy0vk"
+path="res://.godot/imported/EXTREMELY LOUD INCORRECT BUZZER.mp3-f2fb10b4e18ce462bb968f14c86d84c9.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/EXTREMELY LOUD INCORRECT BUZZER.mp3"
+dest_files=["res://.godot/imported/EXTREMELY LOUD INCORRECT BUZZER.mp3-f2fb10b4e18ce462bb968f14c86d84c9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

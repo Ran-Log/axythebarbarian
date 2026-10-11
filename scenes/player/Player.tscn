@@ -1,7 +1,13 @@
 [gd_scene format=3 uid="uid://tdb0edspfbo4"]
 
-[ext_resource type="Script" uid="uid://ctpo45bpkb2lf" path="res://scripts/Player.cs" id="1_8afob"]
+[ext_resource type="Script" uid="uid://ctpo45bpkb2lf" path="res://scripts/components/player/Player.cs" id="1_8afob"]
 [ext_resource type="AudioStream" uid="uid://d27hih0knqf0j" path="res://assets/sounds/New Super Mario Bros. Wii - Dry Bones Sound Effect.mp3" id="2_gfjak"]
+[ext_resource type="AudioStream" uid="uid://csqmnx8pqy0vk" path="res://assets/sounds/EXTREMELY LOUD INCORRECT BUZZER.mp3" id="2_v42im"]
+[ext_resource type="Script" uid="uid://b20ml262mwn7t" path="res://scripts/components/player/InputController.cs" id="3_c3xxp"]
+[ext_resource type="Script" uid="uid://24ixbrpb1jiy" path="res://scripts/components/player/PhysicsController.cs" id="4_npwbq"]
+[ext_resource type="AudioStream" uid="uid://mu2lvq1w2ruw" path="res://assets/sounds/Elusive (Jumpscare) [Lomando.Com].mp3" id="4_v42im"]
+[ext_resource type="Script" uid="uid://di6v2wxgvxxpg" path="res://scripts/components/player/StateController.cs" id="5_v42im"]
+[ext_resource type="Script" uid="uid://bri6qg41724id" path="res://scripts/components/player/AudioController.cs" id="6_pn6s4"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wr5hl"]
 load_path = "res://.godot/imported/Captura de pantalla 2026-02-08 231845.png-53996d653f994aca7488f90eb3eceae4.ctex"
@@ -23,4 +29,24 @@ polygon = PackedVector2Array(-20, -20, -20, 20, 20, 20, 20, -20)
 shape = SubResource("RectangleShape2D_kedfu")
 
 [node name="CollisionSound" type="AudioStreamPlayer2D" parent="." unique_id=684439022]
+stream = ExtResource("2_v42im")
+volume_db = -27.766
+
+[node name="DamageSound" type="AudioStreamPlayer2D" parent="." unique_id=938918698]
 stream = ExtResource("2_gfjak")
+
+[node name="WinSound" type="AudioStreamPlayer2D" parent="." unique_id=2110490517]
+stream = ExtResource("4_v42im")
+volume_db = -10.194
+
+[node name="InputController" type="Node" parent="." unique_id=98008598]
+script = ExtResource("3_c3xxp")
+
+[node name="PhysicsController" type="Node" parent="." unique_id=1369753412]
+script = ExtResource("4_npwbq")
+
+[node name="StateController" type="Node" parent="." unique_id=628189161]
+script = ExtResource("5_v42im")
+
+[node name="AudioController" type="Node" parent="." unique_id=438927649]
+script = ExtResource("6_pn6s4")

@@ -24,6 +24,10 @@ window/stretch/aspect="expand"
 
 project/assembly_name="Axy The Barbarian"
 
+[global_group]
+
+projectile=""
+
 [input]
 
 move_up={
