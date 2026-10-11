@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://m3r5erlldjd4" path="res://scenes/enemies/BlindGazer.tscn" id="3_gyg6b"]
 [ext_resource type="PackedScene" uid="uid://bi764jwavswga" path="res://scenes/enemies/DrunkSkeleton.tscn" id="3_q24mn"]
 [ext_resource type="AudioStream" uid="uid://bhqo7q8wdamng" path="res://assets/sounds/Left 4 Dead Soundtrack- Witch.mp3" id="4_gyg6b"]
+[ext_resource type="PackedScene" uid="uid://byofi42sifli7" path="res://scenes/objects/Exit.tscn" id="5_dc040"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kedfu"]
 size = Vector2(1400, 80)
@@ -54,19 +55,20 @@ polygon = PackedVector2Array(-40, -500, -40, 500, 40, 500, 40, -500)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallRight" unique_id=1461919427]
 shape = SubResource("RectangleShape2D_g7i20")
 
-[node name="BlindGazer" parent="." unique_id=1467120104 instance=ExtResource("3_gyg6b")]
+[node name="BlindGazer" parent="." unique_id=1467120104 groups=["enemy"] instance=ExtResource("3_gyg6b")]
 position = Vector2(514, 122)
-MoveSpeed = 200.0
-MinY = 200.0
 
 [node name="Player" parent="." unique_id=506620727 instance=ExtResource("2_q24mn")]
 position = Vector2(215, 208)
-CollisionSoundCooldown = 0.35
+RestartDelay = 1.5
 
-[node name="DrunkSkeleton" parent="." unique_id=585798889 instance=ExtResource("3_q24mn")]
+[node name="DrunkSkeleton" parent="." unique_id=585798889 groups=["enemy"] instance=ExtResource("3_q24mn")]
 position = Vector2(843, 335)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1521612058]
 stream = ExtResource("4_gyg6b")
 volume_db = -12.454
 autoplay = true
+
+[node name="Exit" parent="." unique_id=824753563 instance=ExtResource("5_dc040")]
+position = Vector2(980, 479)

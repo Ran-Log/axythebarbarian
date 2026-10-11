@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://byofi42sifli7"]
+
+[ext_resource type="Script" uid="uid://d2d1e3bt2gil3" path="res://scripts/Exit.cs" id="1_2sidk"]
+[ext_resource type="Texture2D" uid="uid://d2km41b5aiths" path="res://assets/sprites/071c66471c1845dcb0a918da5d3d03e2~tplv-jj85edgx6n-image-medium.jpeg" id="2_f07mt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fcv1s"]
+size = Vector2(40, 40)
+
+[node name="Exit" type="Area2D" unique_id=824753563]
+script = ExtResource("1_2sidk")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1744194106]
+texture = ExtResource("2_f07mt")
+texture_offset = Vector2(25, 25)
+texture_scale = Vector2(10, 10)
+polygon = PackedVector2Array(-20, -20, -20, 20, 20, 20, 20, -20)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=733188517]
+shape = SubResource("RectangleShape2D_fcv1s")
