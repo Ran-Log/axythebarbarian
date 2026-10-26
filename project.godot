@@ -27,6 +27,7 @@ project/assembly_name="Axy The Barbarian"
 [global_group]
 
 projectile=""
+enemy=""
 
 [input]
 

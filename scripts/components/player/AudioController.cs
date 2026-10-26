@@ -1,6 +1,6 @@
 using Godot;
 
-public partial class AudioController : Node
+public partial class AudioController : Node, IGameObserver
 {
 	[Export]
 	public float CollisionSoundCooldown = 0.15f;
@@ -11,48 +11,63 @@ public partial class AudioController : Node
 	private AudioStreamPlayer2D damageSound;
 	private AudioStreamPlayer2D winSound;
 
-	private StateController state;
-
 	public override void _Ready()
 	{
 		Node parent = GetParent();
 
 		collisionSound =
-			parent.GetNode<AudioStreamPlayer2D>("CollisionSound");
+			parent.GetNode<AudioStreamPlayer2D>(
+                "CollisionSound"
+			);
 
 		damageSound =
-			parent.GetNode<AudioStreamPlayer2D>("DamageSound");
+			parent.GetNode<AudioStreamPlayer2D>(
+                "DamageSound"
+			);
 
 		winSound =
-			parent.GetNode<AudioStreamPlayer2D>("WinSound");
+			parent.GetNode<AudioStreamPlayer2D>(
+                "WinSound"
+			);
 
-		state =
-			parent.GetNode<StateController>("StateController");
+		GlobalEventListener.Instance.RegisterObserver(this);
 	}
 
 	public void UpdateAudio(double delta)
 	{
-		UpdateTimer(delta);
-
-		if (state.IsColliding &&
-			collisionSoundTimer <= 0)
-		{
-			PlayCollisionSound();
-
-			collisionSoundTimer =
-				CollisionSoundCooldown;
-		}
-	}
-
-	private void UpdateTimer(double delta)
-	{
-		if (collisionSoundTimer > 0)
+		if (collisionSoundTimer > 0.0f)
 		{
 			collisionSoundTimer -= (float)delta;
 		}
 	}
 
-	public void PlayDamageSound()
+	public void OnNotify(GameEventType gameEvent)
+	{
+		switch (gameEvent)
+		{
+			case GameEventType.Collision:
+
+				if (collisionSoundTimer <= 0.0f)
+				{
+					PlayCollisionSound();
+
+					collisionSoundTimer =
+						CollisionSoundCooldown;
+				}
+
+				break;
+
+			case GameEventType.Lose:
+				PlayDamageSound();
+				break;
+
+			case GameEventType.Win:
+				PlayWinSound();
+				break;
+		}
+	}
+
+	private void PlayDamageSound()
 	{
 		if (damageSound != null &&
 			damageSound.Stream != null)
@@ -61,7 +76,7 @@ public partial class AudioController : Node
 		}
 	}
 
-	public void PlayWinSound()
+	private void PlayWinSound()
 	{
 		if (winSound != null &&
 			winSound.Stream != null)
@@ -95,5 +110,13 @@ public partial class AudioController : Node
 		};
 
 		soundInstance.Play();
+	}
+
+	public override void _ExitTree()
+	{
+		if (GlobalEventListener.Instance != null)
+		{
+			GlobalEventListener.Instance.RemoveObserver(this);
+		}
 	}
 }

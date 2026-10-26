@@ -11,7 +11,10 @@ public partial class PhysicsController : Node
 	public override void _Ready()
 	{
 		player = GetParent<CharacterBody2D>();
-		state = GetParent().GetNode<StateController>("StateController");
+
+		state =
+			GetParent()
+			.GetNode<StateController>("StateController");
 	}
 
 	public void UpdateMovement(double delta)
@@ -21,39 +24,42 @@ public partial class PhysicsController : Node
 			MoveSpeed *
 			(float)delta;
 
-		state.IsColliding = false;
-
 		KinematicCollision2D collision =
 			player.MoveAndCollide(motion);
 
-		if (collision != null)
+		if (collision == null)
+			return;
+
+		GodotObject collider =
+			collision.GetCollider();
+
+		bool harmfulCollision = false;
+
+		if (collider is Node node)
 		{
-			GodotObject collider =
-				collision.GetCollider();
-
-			bool harmfulCollision = false;
-
-			if (collider is Node node)
+			if (node.IsInGroup("enemy") ||
+				node.IsInGroup("projectile"))
 			{
-				if (node.IsInGroup("enemy") ||
-					node.IsInGroup("projectile"))
-				{
-					state.IsDead = true;
-					harmfulCollision = true;
-				}
-			}
+				harmfulCollision = true;
 
-			if (!harmfulCollision)
-			{
-				state.IsColliding = true;
-			}
-
-			Vector2 slideMotion =
-				collision.GetRemainder().Slide(
-					collision.GetNormal()
+				GlobalEventListener.Instance.NotifyObservers(
+					GameEventType.Lose
 				);
-
-			player.MoveAndCollide(slideMotion);
+			}
 		}
+
+		if (!harmfulCollision)
+		{
+			GlobalEventListener.Instance.NotifyObservers(
+				GameEventType.Collision
+			);
+		}
+
+		Vector2 slideMotion =
+			collision.GetRemainder().Slide(
+				collision.GetNormal()
+			);
+
+		player.MoveAndCollide(slideMotion);
 	}
 }

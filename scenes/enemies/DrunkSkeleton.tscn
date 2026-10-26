@@ -9,7 +9,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kedfu"]
 size = Vector2(40, 40)
 
-[node name="DrunkSkeleton" type="StaticBody2D" unique_id=592662925]
+[node name="DrunkSkeleton" type="StaticBody2D" unique_id=592662925 groups=["enemy"]]
 script = ExtResource("1_qovtv")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=822950884]

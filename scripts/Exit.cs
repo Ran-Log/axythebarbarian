@@ -2,6 +2,8 @@ using Godot;
 
 public partial class Exit : Area2D
 {
+	private bool triggered = false;
+
 	public override void _Ready()
 	{
 		BodyEntered += OnBodyEntered;
@@ -9,12 +11,16 @@ public partial class Exit : Area2D
 
 	private void OnBodyEntered(Node2D body)
 	{
-		if (body is Player player)
-		{
-			StateController state =
-				player.GetNode<StateController>("StateController");
+		if (triggered)
+			return;
 
-			state.HasWon = true;
+		if (body is Player)
+		{
+			triggered = true;
+
+			GlobalEventListener.Instance?.NotifyObservers(
+				GameEventType.Win
+			);
 		}
 	}
 }

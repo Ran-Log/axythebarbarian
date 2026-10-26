@@ -4,11 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://dbw2d55jlpqcu" path="res://assets/sprites/3abff09a8f3c4098b0b461ee0b88ccb9~tplv-jj85edgx6n-image-medium.jpeg" id="2_cydah"]
 [ext_resource type="Script" uid="uid://bmg3hi7di87y5" path="res://scripts/components/gazer/GazerMovementController.cs" id="3_8qk0v"]
 [ext_resource type="Script" uid="uid://n5mxy8h11lt4" path="res://scripts/components/gazer/GazerStateController.cs" id="4_7abr8"]
+[ext_resource type="Script" uid="uid://cgxdaswycc7ou" path="res://scripts/components/gazer/GazerPhysicsController.cs" id="5_7abr8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cydah"]
 size = Vector2(40, 40)
 
-[node name="BlindGazer" type="CharacterBody2D" unique_id=245942272]
+[node name="BlindGazer" type="CharacterBody2D" unique_id=245942272 groups=["enemy"]]
 script = ExtResource("1_ikkue")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=384267921]
@@ -23,10 +24,11 @@ shape = SubResource("RectangleShape2D_cydah")
 
 [node name="MovementController" type="Node" parent="." unique_id=4250225]
 script = ExtResource("3_8qk0v")
-MoveSpeed = 300.0
 
 [node name="StateController" type="Node" parent="." unique_id=1937412263]
 script = ExtResource("4_7abr8")
-MinY = 200.0
-MaxY = 1000.0
+PatrolDistance = 300.0
 BounceCooldown = 0.3
+
+[node name="PhysicsController" type="Node" parent="." unique_id=1155606188]
+script = ExtResource("5_7abr8")
