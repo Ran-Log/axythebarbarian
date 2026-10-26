@@ -1,0 +1,30 @@
+{
+	"objects": [
+		{"type": "wall", "x": 190, "y": 40, "scaleX": 1.6, "scaleY": 0.25},
+		{"type": "wall", "x": 40, "y": 190, "scaleX": 0.1, "scaleY": 4.0},
+		{"type": "wall", "x": 190, "y": 340, "scaleX": 1.6, "scaleY": 0.25},
+		{"type": "wall", "x": 340, "y": 90, "scaleX": 0.1, "scaleY": 1.5},
+		{"type": "wall", "x": 340, "y": 290, "scaleX": 0.1, "scaleY": 1.5},
+		{"type": "wall", "x": 460, "y": 140, "scaleX": 1.1, "scaleY": 0.25},
+		{"type": "wall", "x": 460, "y": 240, "scaleX": 1.1, "scaleY": 0.25},
+		{"type": "wall", "x": 790, "y": 40, "scaleX": 2.2, "scaleY": 0.25},
+		{"type": "wall", "x": 1000, "y": 190, "scaleX": 0.1, "scaleY": 4.0},
+		{"type": "wall", "x": 580, "y": 90, "scaleX": 0.1, "scaleY": 1.5},
+		{"type": "wall", "x": 580, "y": 290, "scaleX": 0.1, "scaleY": 1.5},
+		{"type": "wall", "x": 660, "y": 340, "scaleX": 0.9, "scaleY": 0.25},
+		{"type": "wall", "x": 920, "y": 340, "scaleX": 0.9, "scaleY": 0.25},
+		{"type": "wall", "x": 740, "y": 410, "scaleX": 0.1, "scaleY": 1.5},
+		{"type": "wall", "x": 840, "y": 410, "scaleX": 0.1, "scaleY": 1.5},
+		{"type": "wall", "x": 600, "y": 480, "scaleX": 1.5, "scaleY": 0.25},
+		{"type": "wall", "x": 980, "y": 480, "scaleX": 1.5, "scaleY": 0.25},
+		{"type": "wall", "x": 460, "y": 585, "scaleX": 0.1, "scaleY": 2.875},
+		{"type": "wall", "x": 1120, "y": 585, "scaleX": 0.1, "scaleY": 2.875},
+		{"type": "wall", "x": 790, "y": 690, "scaleX": 3.4, "scaleY": 0.25},
+		{"type": "gazer", "x": 240, "y": 190},
+		{"type": "gazer", "x": 700, "y": 190},
+		{"type": "skeleton", "x": 880, "y": 250},
+		{"type": "gazer", "x": 640, "y": 585},
+		{"type": "skeleton", "x": 950, "y": 600},
+		{"type": "exit", "x": 520, "y": 630}
+	]
+}

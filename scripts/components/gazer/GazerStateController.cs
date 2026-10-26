@@ -3,10 +3,7 @@ using Godot;
 public partial class GazerStateController : Node
 {
 	[Export]
-	public float MinY = 500.0f;
-
-	[Export]
-	public float MaxY = 800.0f;
+	public float PatrolDistance = 60.0f;
 
 	[Export]
 	public float BounceCooldown = 0.15f;
@@ -15,9 +12,28 @@ public partial class GazerStateController : Node
 
 	public float BounceTimer { get; set; } = 0.0f;
 
-	public void UpdateState(double delta, float currentY)
+	private float minY;
+	private float maxY;
+	private bool initialized = false;
+
+	public void Initialize(float startingY)
 	{
+		minY = startingY - PatrolDistance;
+		maxY = startingY + PatrolDistance;
+
+		initialized = true;
+	}
+
+	public void UpdateState(
+		double delta,
+		float currentY
+	)
+	{
+		if (!initialized)
+			return;
+
 		UpdateBounceTimer(delta);
+
 		CheckLimits(currentY);
 	}
 
@@ -29,16 +45,17 @@ public partial class GazerStateController : Node
 	public void Bounce()
 	{
 		MovingDown = !MovingDown;
+
 		BounceTimer = BounceCooldown;
 	}
 
 	private void CheckLimits(float currentY)
 	{
-		if (currentY >= MaxY)
+		if (currentY >= maxY)
 		{
 			MovingDown = false;
 		}
-		else if (currentY <= MinY)
+		else if (currentY <= minY)
 		{
 			MovingDown = true;
 		}

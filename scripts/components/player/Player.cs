@@ -1,6 +1,6 @@
 using Godot;
 
-public partial class Player : CharacterBody2D
+public partial class Player : CharacterBody2D, IGameObserver
 {
 	[Export]
 	public float RestartDelay = 1.0f;
@@ -15,29 +15,21 @@ public partial class Player : CharacterBody2D
 	public override void _Ready()
 	{
 		inputController =
-			GetNode<InputController>(
-                "InputController"
-			);
+			GetNode<InputController>("InputController");
 
 		physicsController =
-			GetNode<PhysicsController>(
-                "PhysicsController"
-			);
+			GetNode<PhysicsController>("PhysicsController");
 
 		stateController =
-			GetNode<StateController>(
-                "StateController"
-			);
+			GetNode<StateController>("StateController");
 
 		audioController =
-			GetNode<AudioController>(
-                "AudioController"
-			);
+			GetNode<AudioController>("AudioController");
+
+		GlobalEventListener.Instance.RegisterObserver(this);
 	}
 
-	public override void _PhysicsProcess(
-		double delta
-	)
+	public override void _PhysicsProcess(double delta)
 	{
 		if (endingGame)
 			return;
@@ -46,15 +38,24 @@ public partial class Player : CharacterBody2D
 
 		physicsController.UpdateMovement(delta);
 
+		// Se mantiene para actualizar el cooldown del audio.
 		audioController.UpdateAudio(delta);
+	}
 
-		if (stateController.IsDead)
+	public void OnNotify(GameEventType gameEvent)
+	{
+		if (endingGame)
+			return;
+
+		switch (gameEvent)
 		{
-			StartLoseSequence();
-		}
-		else if (stateController.HasWon)
-		{
-			StartWinSequence();
+			case GameEventType.Lose:
+				StartLoseSequence();
+				break;
+
+			case GameEventType.Win:
+				StartWinSequence();
+				break;
 		}
 	}
 
@@ -64,8 +65,6 @@ public partial class Player : CharacterBody2D
 			return;
 
 		endingGame = true;
-
-		audioController.PlayDamageSound();
 
 		await ToSignal(
 			GetTree().CreateTimer(RestartDelay),
@@ -82,13 +81,19 @@ public partial class Player : CharacterBody2D
 
 		endingGame = true;
 
-		audioController.PlayWinSound();
-
 		await ToSignal(
 			GetTree().CreateTimer(RestartDelay),
 			SceneTreeTimer.SignalName.Timeout
 		);
 
 		GetTree().ReloadCurrentScene();
+	}
+
+	public override void _ExitTree()
+	{
+		if (GlobalEventListener.Instance != null)
+		{
+			GlobalEventListener.Instance.RemoveObserver(this);
+		}
 	}
 }
