@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://kjl0mmwapnd0"]
+
+[ext_resource type="Script" uid="uid://c4mfpfdaj5dra" path="res://scripts/creatures/zombie/HungryZombie.cs" id="1_3hqn1"]
+[ext_resource type="Texture2D" uid="uid://b2sxl43wq4wf5" path="res://assets/sprites/Captura de pantalla 2026-09-06 233414.png" id="2_wt0cn"]
+[ext_resource type="Script" uid="uid://c2pv31xdep0g2" path="res://scripts/creatures/zombie/ZombieAIController.cs" id="3_3hqn1"]
+[ext_resource type="Script" uid="uid://cskq77orfp372" path="res://scripts/creatures/zombie/ZombieMovementController.cs" id="4_wt0cn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_amacd"]
+size = Vector2(40, 40)
+
+[node name="HungryZombie" type="CharacterBody2D" unique_id=987158388 groups=["enemy"]]
+script = ExtResource("1_3hqn1")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=14050371]
+color = Color(0.8936459, 0.8821313, 0.89470637, 1)
+texture = ExtResource("2_wt0cn")
+texture_offset = Vector2(20, 20)
+texture_scale = Vector2(10, 10)
+polygon = PackedVector2Array(-20, -20, -20, 20, 20, 20, 20, -20)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1055220845]
+shape = SubResource("RectangleShape2D_amacd")
+
+[node name="AIController" type="Node" parent="." unique_id=1481238575]
+script = ExtResource("3_3hqn1")
+MoveSpeed = 70.0
+
+[node name="MovementController" type="Node" parent="." unique_id=1339522578]
+script = ExtResource("4_wt0cn")

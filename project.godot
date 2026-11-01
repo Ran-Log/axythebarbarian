@@ -28,6 +28,7 @@ project/assembly_name="Axy The Barbarian"
 
 projectile=""
 enemy=""
+player=""
 
 [input]
 

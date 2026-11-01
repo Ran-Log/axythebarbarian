@@ -25,6 +25,7 @@
 		{"type": "skeleton", "x": 880, "y": 250},
 		{"type": "gazer", "x": 640, "y": 585},
 		{"type": "skeleton", "x": 950, "y": 600},
+		{"type": "rat",  "x": 800, "y": 400},
 		{"type": "exit", "x": 520, "y": 630}
 	]
 }

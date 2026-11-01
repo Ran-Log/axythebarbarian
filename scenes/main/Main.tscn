@@ -9,6 +9,8 @@
 [ext_resource type="AudioStream" uid="uid://bhqo7q8wdamng" path="res://assets/sounds/Left 4 Dead Soundtrack- Witch.mp3" id="4_gyg6b"]
 [ext_resource type="PackedScene" uid="uid://byofi42sifli7" path="res://scenes/objects/Exit.tscn" id="5_dc040"]
 [ext_resource type="Script" uid="uid://rrr13u76a3gx" path="res://scripts/factory/LevelLoader.cs" id="7_qkm1d"]
+[ext_resource type="PackedScene" uid="uid://ibvd183jrq0p" path="res://scenes/enemies/CowardRat.tscn" id="10_3km4f"]
+[ext_resource type="Script" uid="uid://c67prnske5ks5" path="res://scripts/pathfinding/LevelGraph.cs" id="11_qkm1d"]
 
 [node name="Main" type="Node2D" unique_id=421943200]
 
@@ -21,6 +23,7 @@ WallScene = ExtResource("3_3km4f")
 GazerScene = ExtResource("3_gyg6b")
 SkeletonScene = ExtResource("3_q24mn")
 ExitScene = ExtResource("5_dc040")
+RatScene = ExtResource("10_3km4f")
 
 [node name="LevelLoader" type="Node" parent="." unique_id=1241767482]
 script = ExtResource("7_qkm1d")
@@ -37,3 +40,6 @@ autoplay = true
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1533068054]
 position = Vector2(577, 327)
 zoom = Vector2(0.8, 0.8)
+
+[node name="LevelGraph" type="Node" parent="." unique_id=2015640740]
+script = ExtResource("11_qkm1d")

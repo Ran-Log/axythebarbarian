@@ -1,0 +1,51 @@
+{
+  "objects": [
+	{ "type": "wall", "x": 190, "y": 40,  "scaleX": 1.6, "scaleY": 0.25 },
+	{ "type": "wall", "x": 40,  "y": 190, "scaleX": 0.1, "scaleY": 4.0 },
+	{ "type": "wall", "x": 190, "y": 340, "scaleX": 1.6, "scaleY": 0.25 },
+	{ "type": "wall", "x": 340, "y": 90,  "scaleX": 0.1, "scaleY": 1.25 },
+	{ "type": "wall", "x": 340, "y": 290, "scaleX": 0.1, "scaleY": 1.25 },
+
+	{ "type": "wall", "x": 500, "y": 140, "scaleX": 1.6, "scaleY": 0.25 },
+	{ "type": "wall", "x": 500, "y": 240, "scaleX": 1.6, "scaleY": 0.25 },
+
+	{ "type": "wall", "x": 860,  "y": 40,  "scaleX": 2.0, "scaleY": 0.25 },
+	{ "type": "wall", "x": 1060, "y": 190, "scaleX": 0.1, "scaleY": 4.0 },
+	{ "type": "wall", "x": 660,  "y": 90,  "scaleX": 0.1, "scaleY": 1.25 },
+	{ "type": "wall", "x": 660,  "y": 290, "scaleX": 0.1, "scaleY": 1.25 },
+	{ "type": "wall", "x": 760,  "y": 340, "scaleX": 0.6, "scaleY": 0.25 },
+	{ "type": "wall", "x": 960,  "y": 340, "scaleX": 0.6, "scaleY": 0.25 },
+
+	{ "type": "wall", "x": 810, "y": 410, "scaleX": 0.1, "scaleY": 1.75 },
+	{ "type": "wall", "x": 910, "y": 410, "scaleX": 0.1, "scaleY": 1.75 },
+
+	{ "type": "wall", "x": 760,  "y": 480, "scaleX": 0.6, "scaleY": 0.25 },
+	{ "type": "wall", "x": 960,  "y": 480, "scaleX": 0.6, "scaleY": 0.25 },
+	{ "type": "wall", "x": 660,  "y": 550, "scaleX": 0.1, "scaleY": 0.875 },
+	{ "type": "wall", "x": 660,  "y": 690, "scaleX": 0.1, "scaleY": 0.875 },
+	{ "type": "wall", "x": 1060, "y": 620, "scaleX": 0.1, "scaleY": 3.5 },
+	{ "type": "wall", "x": 860,  "y": 760, "scaleX": 2.0, "scaleY": 0.25 },
+
+	{ "type": "wall", "x": 500, "y": 580, "scaleX": 1.6, "scaleY": 0.25 },
+	{ "type": "wall", "x": 500, "y": 660, "scaleX": 1.6, "scaleY": 0.25 },
+
+	{ "type": "wall", "x": 190, "y": 480, "scaleX": 1.6, "scaleY": 0.25 },
+	{ "type": "wall", "x": 40,  "y": 620, "scaleX": 0.1, "scaleY": 3.5 },
+	{ "type": "wall", "x": 190, "y": 760, "scaleX": 1.6, "scaleY": 0.25 },
+	{ "type": "wall", "x": 340, "y": 550, "scaleX": 0.1, "scaleY": 0.875 },
+	{ "type": "wall", "x": 340, "y": 690, "scaleX": 0.1, "scaleY": 0.875 },
+
+	{ "type": "gazer",    "x": 220, "y": 190 },
+	{ "type": "rat",      "x": 500, "y": 190 },
+	{ "type": "zombie",   "x": 820, "y": 190 },
+	{ "type": "skeleton", "x": 940, "y": 210 },
+
+	{ "type": "gazer",    "x": 800, "y": 620 },
+	{ "type": "zombie",   "x": 930, "y": 620 },
+
+	{ "type": "rat",      "x": 500, "y": 620 },
+	{ "type": "skeleton", "x": 220, "y": 620 },
+
+	{ "type": "exit",     "x": 120, "y": 620 }
+  ]
+}
