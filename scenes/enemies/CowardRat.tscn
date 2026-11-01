@@ -23,6 +23,7 @@ shape = SubResource("RectangleShape2D_oen3a")
 
 [node name="AIController" type="Node" parent="." unique_id=1919965316]
 script = ExtResource("3_wxvp1")
+FleeDistance = 200.0
 
 [node name="MovementController" type="Node" parent="." unique_id=1048925716]
 script = ExtResource("4_c8w0w")

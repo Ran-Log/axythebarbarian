@@ -15,7 +15,7 @@ load_path = "res://.godot/imported/Captura de pantalla 2026-02-08 231845.png-539
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kedfu"]
 size = Vector2(40, 40)
 
-[node name="Player" type="CharacterBody2D" unique_id=1863031034]
+[node name="Player" type="CharacterBody2D" unique_id=1863031034 groups=["player"]]
 script = ExtResource("1_8afob")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=2095660972]
@@ -35,7 +35,7 @@ volume_db = -27.766
 [node name="DamageSound" type="AudioStreamPlayer2D" parent="." unique_id=938918698]
 stream = ExtResource("2_gfjak")
 
-[node name="WinSound" type="AudioStreamPlayer2D" parent="." unique_id=2110490517 groups=["player"]]
+[node name="WinSound" type="AudioStreamPlayer2D" parent="." unique_id=2110490517]
 stream = ExtResource("4_v42im")
 volume_db = -10.194
 

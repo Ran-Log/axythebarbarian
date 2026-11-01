@@ -19,6 +19,7 @@ texture_scale = Vector2(10, 10)
 polygon = PackedVector2Array(-20, -20, -20, 20, 20, 20, 20, -20)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1055220845]
+scale = Vector2(0.8, 0.8)
 shape = SubResource("RectangleShape2D_amacd")
 
 [node name="AIController" type="Node" parent="." unique_id=1481238575]

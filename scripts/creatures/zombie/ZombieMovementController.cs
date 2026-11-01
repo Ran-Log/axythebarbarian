@@ -29,6 +29,14 @@ public partial class ZombieMovementController : Node
 
 		if (collision != null)
 		{
+			if (collision.GetCollider() is Player)
+			{
+				GlobalEventListener.Instance?.NotifyObservers(
+					GameEventType.Lose
+				);
+				return;
+			}
+
 			Vector2 slideMotion =
 				collision
 				.GetRemainder()
