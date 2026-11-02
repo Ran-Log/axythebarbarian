@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://m3r5erlldjd4"]
 
-[ext_resource type="Script" uid="uid://cansjl4mjrhvq" path="res://scripts/components/gazer/BlindGazer.cs" id="1_ikkue"]
+[ext_resource type="Script" uid="uid://cansjl4mjrhvq" path="res://scripts/creatures/gazer/BlindGazer.cs" id="1_ikkue"]
 [ext_resource type="Texture2D" uid="uid://dbw2d55jlpqcu" path="res://assets/sprites/3abff09a8f3c4098b0b461ee0b88ccb9~tplv-jj85edgx6n-image-medium.jpeg" id="2_cydah"]
-[ext_resource type="Script" uid="uid://bmg3hi7di87y5" path="res://scripts/components/gazer/GazerMovementController.cs" id="3_8qk0v"]
-[ext_resource type="Script" uid="uid://n5mxy8h11lt4" path="res://scripts/components/gazer/GazerStateController.cs" id="4_7abr8"]
-[ext_resource type="Script" uid="uid://cgxdaswycc7ou" path="res://scripts/components/gazer/GazerPhysicsController.cs" id="5_7abr8"]
+[ext_resource type="Script" uid="uid://bmg3hi7di87y5" path="res://scripts/creatures/gazer/GazerMovementController.cs" id="3_8qk0v"]
+[ext_resource type="Script" uid="uid://n5mxy8h11lt4" path="res://scripts/creatures/gazer/GazerStateController.cs" id="4_7abr8"]
+[ext_resource type="Script" uid="uid://cgxdaswycc7ou" path="res://scripts/creatures/gazer/GazerPhysicsController.cs" id="5_7abr8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cydah"]
 size = Vector2(40, 40)

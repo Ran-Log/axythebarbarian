@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://ibvd183jrq0p"]
+
+[ext_resource type="Texture2D" uid="uid://ckohdr8f0aqeh" path="res://assets/sprites/Captura de pantalla 2026-11-01 171333.png" id="1_atdy6"]
+[ext_resource type="Script" uid="uid://cq7rco5tpc3uh" path="res://scripts/creatures/rat/CowardRat.cs" id="1_p8tj3"]
+[ext_resource type="Script" uid="uid://lfyxr4lkd663" path="res://scripts/creatures/rat/RatAIController.cs" id="3_wxvp1"]
+[ext_resource type="Script" uid="uid://2mkjr3wndvad" path="res://scripts/creatures/rat/RatMovementController.cs" id="4_c8w0w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oen3a"]
+size = Vector2(40, 40)
+
+[node name="CowardRat" type="CharacterBody2D" unique_id=1601722986 groups=["enemy"]]
+script = ExtResource("1_p8tj3")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1734781917]
+color = Color(0.8936459, 0.8821313, 0.89470637, 1)
+texture = ExtResource("1_atdy6")
+texture_offset = Vector2(21, 25)
+texture_scale = Vector2(3, 3)
+polygon = PackedVector2Array(-20, -20, -20, 20, 20, 20, 20, -20)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1354234983]
+shape = SubResource("RectangleShape2D_oen3a")
+
+[node name="AIController" type="Node" parent="." unique_id=1919965316]
+script = ExtResource("3_wxvp1")
+FleeDistance = 200.0
+
+[node name="MovementController" type="Node" parent="." unique_id=1048925716]
+script = ExtResource("4_c8w0w")

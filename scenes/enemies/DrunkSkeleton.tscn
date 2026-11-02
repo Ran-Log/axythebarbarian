@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bi764jwavswga"]
 
-[ext_resource type="Script" uid="uid://cwgomxoyjnw0e" path="res://scripts/components/skeleton/DrunkSkeleton.cs" id="1_qovtv"]
+[ext_resource type="Script" uid="uid://cwgomxoyjnw0e" path="res://scripts/creatures/skeleton/DrunkSkeleton.cs" id="1_qovtv"]
 [ext_resource type="PackedScene" uid="uid://6k6i76foanah" path="res://scenes/projectiles/Arrow.tscn" id="2_576jr"]
 [ext_resource type="Texture2D" uid="uid://chx1vwq8iclgb" path="res://assets/sprites/0e4352af80cf47a9adcd6cc08ce80ab1~tplv-jj85edgx6n-image-medium.jpeg" id="3_x0npu"]
-[ext_resource type="Script" uid="uid://csb1awwvar1lu" path="res://scripts/components/skeleton/ShootingController.cs" id="4_wrlfv"]
-[ext_resource type="Script" uid="uid://bu40s1h618j62" path="res://scripts/components/skeleton/TimingController.cs" id="5_t8d4w"]
+[ext_resource type="Script" uid="uid://csb1awwvar1lu" path="res://scripts/creatures/skeleton/ShootingController.cs" id="4_wrlfv"]
+[ext_resource type="Script" uid="uid://bu40s1h618j62" path="res://scripts/creatures/skeleton/TimingController.cs" id="5_t8d4w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kedfu"]
 size = Vector2(40, 40)

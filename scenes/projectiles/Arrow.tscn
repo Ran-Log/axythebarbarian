@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://6k6i76foanah"]
 
-[ext_resource type="Script" uid="uid://cf6vpqysco0o4" path="res://scripts/components/skeleton/Arrow.cs" id="1_vtuyp"]
+[ext_resource type="Script" uid="uid://cf6vpqysco0o4" path="res://scripts/creatures/skeleton/Arrow.cs" id="1_vtuyp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kedfu"]
 size = Vector2(20, 6)

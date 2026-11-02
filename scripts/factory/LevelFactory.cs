@@ -13,6 +13,12 @@ public partial class LevelFactory : Node
 
 	[Export]
 	public PackedScene ExitScene;
+	
+	[Export]
+	public PackedScene RatScene;
+	
+	[Export]
+	public PackedScene ZombieScene;
 
 	public Node2D CreateObject(
 		string type,
@@ -38,6 +44,14 @@ public partial class LevelFactory : Node
 
 			case "exit":
 				scene = ExitScene;
+				break;
+				
+			case "rat":
+				scene = RatScene;
+				break;
+				
+			case "zombie":
+				scene = ZombieScene;
 				break;
 
 			default:
